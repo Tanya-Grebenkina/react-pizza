@@ -5,16 +5,16 @@ import debounce from 'lodash.debounce';
 
 import styles from './Search.module.scss';
 
-const Search = () => {
+const Search: React.FC = () => {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState('');
 
-  const inputRef = React.useRef();
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickClear = () => {
     dispatch(setSearchValue(''));
     setValue('');
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   // eslint-disable-next-line
@@ -31,7 +31,7 @@ const Search = () => {
   //     setSearchValue(str);
   //   }, 1000)).current;
 
-  const onChangeInput = (event) => {
+  const onChangeInput = (event: any) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   }
