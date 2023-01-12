@@ -2,12 +2,12 @@ import React from 'react';
 
 type CategoriesProps = { 
   value: number;
-  onChangeCategory: any;
+  onChangeCategory: (ind: number) => void;
 };
 
-const Categories: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
-  const categories = ['Всі',`М'ясні`,'Венетаріанські','Гриль','Гострі','Закриті'];
+const categories = ['Всі',`М'ясні`,'Венетаріанські','Гриль','Гострі','Закриті'];
 
+const Categories: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
   return (
     <div className="categories">
       <ul>

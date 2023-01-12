@@ -25,13 +25,7 @@ const Search: React.FC = () => {
     [],
   );
 
-  // вариант решить без исползования useCallback()
-  // const updateSearchValue = React.useRef(
-  //   debounce((str) => {
-  //     setSearchValue(str);
-  //   }, 1000)).current;
-
-  const onChangeInput = (event: any) => {
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   }
@@ -79,6 +73,9 @@ const Search: React.FC = () => {
         placeholder="Пошук піцци..."
       />
       {value && (
+
+
+
         <svg
           onClick={onClickClear}
           className={styles.clearIcon}

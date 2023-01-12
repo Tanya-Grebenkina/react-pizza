@@ -1,23 +1,28 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setSort, selectSort } from '../redux/slices/filterSlice';
+import { setSort, selectSort, SortPropertyEnum } from '../redux/slices/filterSlice';
 
 type SortItem = {
   name: string;
-  sortProperty: string;
+  // sortProperty: string;
+  sortProperty: SortPropertyEnum;
+};
+
+type PopupClick = MouseEvent & {
+  path: Node[];
 };
 
 const list: SortItem[] = [ 
-  {name:'популярності (DESC)', sortProperty: 'rating'},
-  {name:'популярності (ASC)', sortProperty: '-rating'},
-  {name:'ціні (DESC)', sortProperty: 'price'},
-  {name:'ціні (ASC)', sortProperty: '-price'},
-  {name:'алфавіту (DESC)', sortProperty: 'title'},
-  {name:'алфавіту (ASC)', sortProperty: '-title'},
+  {name:'популярності (DESC)', sortProperty: SortPropertyEnum.RATING_DESC},
+  {name:'популярності (ASC)', sortProperty: SortPropertyEnum.RATING_ASC},
+  {name:'ціні (DESC)', sortProperty:  SortPropertyEnum.PRICE_DESC},
+  {name:'ціні (ASC)', sortProperty: SortPropertyEnum.PRICE_ASC},
+  {name:'алфавіту (DESC)', sortProperty: SortPropertyEnum.TITLE_DESC},
+  {name:'алфавіту (ASC)', sortProperty: SortPropertyEnum.TITLE_ASC},
 ];
 
-const Sort = () => {
+const SortPopup = () => {
   const dispatch = useDispatch();
   const sort = useSelector(selectSort);
   const sortRef = React.useRef<HTMLDivElement>(null);
@@ -30,8 +35,10 @@ const Sort = () => {
   }
 
   React.useEffect(() => {
-    const handleClickOutside = (event: any) => {
-        if (!event.path.includes(sortRef.current)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      const _event = event as PopupClick;
+
+        if (sortRef.current && !_event.path.includes(sortRef.current)) {
           setOpen(false);
         }
       };
@@ -74,4 +81,4 @@ const Sort = () => {
   );
 }
 
-export default Sort;
+export default SortPopup;
