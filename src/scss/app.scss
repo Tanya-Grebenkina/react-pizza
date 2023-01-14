@@ -1,6 +1,5 @@
 @import './variables';
 @import './libs/normalize';
-
 @import './components/all';
 
 body {
@@ -65,7 +64,6 @@ body {
 .container {
   width: $container-width;
   margin: 0 auto;
-  // @media (max-width: 768px) {
   @media (max-width: 1190px) {
     flex-direction: column;
   }
