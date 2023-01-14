@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setSearchValue } from '../../redux/slices/filterSlice';
 import debounce from 'lodash.debounce';
 
 import styles from './Search.module.scss';
+import { setSearchValue } from '../../redux/filter/slice';
 
 const Search: React.FC = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,6 @@ const Search: React.FC = () => {
     inputRef.current?.focus();
   };
 
-  // eslint-disable-next-line
   const updateSearchValue = React.useCallback(
     debounce((str) => {
       dispatch(setSearchValue(str));
@@ -73,9 +72,6 @@ const Search: React.FC = () => {
         placeholder="Пошук піцци..."
       />
       {value && (
-
-
-
         <svg
           onClick={onClickClear}
           className={styles.clearIcon}

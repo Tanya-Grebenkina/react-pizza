@@ -65,7 +65,8 @@ body {
 .container {
   width: $container-width;
   margin: 0 auto;
-  @media (max-width: 768px) {
+  // @media (max-width: 768px) {
+  @media (max-width: 1190px) {
     flex-direction: column;
   }
 
@@ -255,6 +256,26 @@ body {
             display: none;
           }
         }
+        &--disabled {
+          opacity: 0.4;
+          border-color: #787878;
+
+          &:active {
+            transform: none;
+          }
+
+          &:hover {
+            background-color: transparent;
+
+            svg path {
+              fill: #787878;
+            }
+          }
+
+          svg path {
+            fill: #787878;
+          }
+        }
       }
     }
 
@@ -402,7 +423,7 @@ body {
 
   &--empty {
     margin: 80px auto;
-    width: 600px;
+    max-width: 600px;
     text-align: center;
 
     h2 {
@@ -435,6 +456,14 @@ body {
       margin: 0 auto;
       font-weight: 600;
       font-size: 18px;
+    }
+  }
+  @media(max-width: 496px) {
+    h2 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 14px;
     }
   }
 }
