@@ -17,6 +17,7 @@ const Search: React.FC = () => {
     inputRef.current?.focus();
   };
 
+  // eslint-disable-next-line
   const updateSearchValue = React.useCallback(
     debounce((str) => {
       dispatch(setSearchValue(str));
@@ -27,7 +28,7 @@ const Search: React.FC = () => {
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
-  }
+  };
 
   return (
     <div className={styles.root}>

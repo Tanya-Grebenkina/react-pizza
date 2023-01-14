@@ -7,11 +7,11 @@ const NotFoundBlock: React.FC = () => {
       <h1>
         <span>🥺</span>
         <br />
-        Нічого не знайдено 
+        Нічого не знайдено
       </h1>
       <p className={styles.description}>Нажаль данної сторінки немає на нашому сайті</p>
     </div>
-  )
-}
+  );
+};
 
 export default NotFoundBlock;

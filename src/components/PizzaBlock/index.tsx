@@ -47,18 +47,19 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, typ
             <li
               key={typeIndex}
               onClick={() => setActiveType(typeIndex)}
-              className={activeType === typeIndex ? 'active' : ''}
-            >
+              className={activeType === typeIndex ? 'active' : ''}>
               {typeNames[typeIndex]}
             </li>
           ))}
         </ul>
-        <ul> 
+        <ul>
           {sizes.map((size, i) => (
-            <li 
+            <li
               key={size}
               onClick={() => setActiveSize(i)}
-              className={activeSize === i ? 'active' : ''}>{size} см.</li>
+              className={activeSize === i ? 'active' : ''}>
+              {size} см.
+            </li>
           ))}
         </ul>
       </div>

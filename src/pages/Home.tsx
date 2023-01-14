@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../redux/store';
 
 import Categories from '../components/Categories';
-import Sort from "../components/Sort";
-import PizzaBlock from "../components/PizzaBlock";
-import Skeleton from "../components/PizzaBlock/Skeleton";
+import Sort from '../components/Sort';
+import PizzaBlock from '../components/PizzaBlock';
+import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
 
 import { selectFiter } from '../redux/filter/selectors';
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const search = searchValue ? `&search=${searchValue}` : '';
 
-    dispatch( 
+    dispatch(
       fetchPizzas({
         sortBy,
         order,
@@ -41,8 +41,8 @@ const Home: React.FC = () => {
         search,
         currentPage: String(currentPage),
       }),
-    ); 
- 
+    );
+
     window.scrollTo(0, 0);
   };
 
@@ -75,4 +75,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
