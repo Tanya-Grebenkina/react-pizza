@@ -25,13 +25,24 @@ const initialState: CartSliceState = getCartFromLS();
      },
      minusItem(state, action: PayloadAction<string>) {
       const findItem = state.items.find((obj) => obj.id === action.payload);
+
       if (findItem) {
         findItem.count--;
-        state.totalPrice -= findItem.price;
+
+        //мое - закоментила
+        // state.totalPrice -= findItem.price;
+          //мое - закоментила
       }
+
+      //добавила
+      state.totalPrice = calcTotalPrice(state.items);
+      //добавила
     },
      removeItem(state, action: PayloadAction<string>) {
        state.items = state.items.filter((obj) => obj.id !== action.payload);
+       //добавила
+       state.totalPrice = calcTotalPrice(state.items);
+       //добавила
      },
      clearItems(state) {
        state.items = [];

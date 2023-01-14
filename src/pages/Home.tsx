@@ -7,6 +7,7 @@ import Sort from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import Pagination from '../components/Pagination';
+
 import { selectFiter } from '../redux/filter/selectors';
 import { selectPizzaData } from '../redux/pizza/selectors';
 import { setCategoryId, setCurrentPage } from '../redux/filter/slice';
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
 
   const onChangeCategory = React.useCallback((idx: number) => {
     dispatch(setCategoryId(idx));
+    // eslint-disable-next-line
   }, []);
 
   const onChangePage = (page: number) => {
@@ -46,6 +48,7 @@ const Home: React.FC = () => {
 
   React.useEffect(() => {
     getPizzas();
+    // eslint-disable-next-line
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   const pizzas = items.map((obj: any) => <PizzaBlock key={obj.id} {...obj} />);
