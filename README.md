@@ -25,4 +25,5 @@ React Pizza is an online pizza store. Here you can choose the pizza you like and
 - React Pagination (pagination)
 - Lodash.Debounce
 
-
+## You can see demo following the link
+[DEMO](You can see demo following the link)
