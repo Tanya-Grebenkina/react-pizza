@@ -1,7 +1,7 @@
 # React pizza
 
 ## Description
-React Pizza is an online pizza store. Here you can choose the pizza you like and order it! I made this project in order to get acquainted with the Redux Toolkit state manager, ReactJs, and TypeScript
+React Pizza is an online pizza store. Here you can choose the pizza you like and order it! I made this project in order to get acquainted with the Redux Toolkit state manager, ReactJs, and TypeScript.
 
 ## Functionality
 
