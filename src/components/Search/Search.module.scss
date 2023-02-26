@@ -41,6 +41,11 @@
   right: 15px;
   top: 15px;
   cursor: pointer;
+  @media(max-width: 1190px) {
+    top: 34px;
+    width: 14px;
+    height: 14px;
+  }
 
   &:hover {
     opacity: 0.8;
