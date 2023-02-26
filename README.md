@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # React pizza
 
 ## Description
@@ -28,5 +27,3 @@ React Pizza is an online pizza store. Here you can choose the pizza you like and
 
 ## You can see demo following the link
 [DEMO](https://tanya-grebenkina.github.io/react-pizza/)
-=======
->>>>>>> e61d2c5 (some minor changes were made)
